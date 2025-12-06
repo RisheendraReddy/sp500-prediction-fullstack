@@ -46,12 +46,13 @@ yarn-error.log*
 
 # Data files
 *.csv
-*.pkl
 *.h5
 *.hdf5
 data/
-models/*.pkl
-!models/.gitkeep
+
+# Model files - exclude .pkl files except in models directory
+*.pkl
+!**/models/*.pkl
 
 # Logs
 *.log
