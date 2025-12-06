@@ -76,10 +76,11 @@ inference_server.py
 inference_server.ipynb
 kaggle_evaluation/
 SUBMISSION_*.md
-HOW_TO_*.md
+HOW_TO_ADD_COMPETITION_DATA.md
+HOW_TO_TRAIN_MODEL.md
 NEXT_STEPS_*.md
 NOTEBOOK_*.md
-UPLOAD_*.md
+UPLOAD_CLARIFICATION.md
 WHY_NO_*.md
 EXPECTED_*.md
 OUTPUT_*.md
