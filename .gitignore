@@ -65,3 +65,24 @@ Thumbs.db
 dist/
 build/
 *.pyc
+
+# Kaggle files
+hull-tactical-market-prediction/
+*KAGGLE*
+*KAGGLE*.md
+*KAGGLE*.py
+*KAGGLE*.ipynb
+inference_server.py
+inference_server.ipynb
+kaggle_evaluation/
+SUBMISSION_*.md
+HOW_TO_*.md
+NEXT_STEPS_*.md
+NOTEBOOK_*.md
+UPLOAD_*.md
+WHY_NO_*.md
+EXPECTED_*.md
+OUTPUT_*.md
+EVALUATION_API_*.md
+KAGGLE_*.md
+prepare_submission.sh
