@@ -55,7 +55,7 @@ jobs:
       with:
         node-version: '18'
         cache: 'npm'
-        cache-dir: ./sp500-frontend/node_modules
+        cache-dependency-path: ./sp500-frontend/package-lock.json
     
     - name: Install dependencies
       working-directory: ./sp500-frontend
