@@ -53,16 +53,39 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '18'
-        cache: 'npm'
-        cache-dependency-path: ./sp500-frontend/package-lock.json
+    
+    - name: Cache node modules
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('sp500-frontend/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    
+    - name: Verify package files exist
+      working-directory: ./sp500-frontend
+      run: |
+        ls -la package.json
+        ls -la package-lock.json || echo "package-lock.json not found, will be created"
     
     - name: Install dependencies
       working-directory: ./sp500-frontend
-      run: npm ci
+      run: |
+        npm ci || npm install
     
     - name: Build frontend
       working-directory: ./sp500-frontend
       run: npm run build
+    
+    - name: Check build output
+      run: |
+        if [ -d "sp500-frontend/dist" ]; then
+          echo "Build successful, dist directory exists"
+          ls -la sp500-frontend/dist
+        else
+          echo "Warning: dist directory not found"
+          exit 1
+        fi
     
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
@@ -70,3 +93,4 @@ jobs:
         name: frontend-build
         path: sp500-frontend/dist
         retention-days: 7
+        if-no-files-found: error
