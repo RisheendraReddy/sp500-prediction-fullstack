@@ -5,11 +5,11 @@ A complete full-stack application for predicting S&P 500 daily returns using mac
 ## 🚀 Features
 
 - **Backend API**: FastAPI-based REST API with multiple ML models
-- **Frontend**: Modern React application with beautiful UI
+- **Frontend**: Modern React application with beautiful black & green UI
 - **ML Models**: LightGBM, XGBoost, Random Forest, Gradient Boosting
 - **Real-time Predictions**: Single and batch prediction endpoints
 - **Model Training**: Train models via API or CLI
-- **Modern UI**: Black & green theme with animations
+- **Modern UI**: Black & green theme with smooth animations
 
 ## 📁 Project Structure
 
@@ -18,8 +18,8 @@ A complete full-stack application for predicting S&P 500 daily returns using mac
 ├── sp500-api/          # Backend API (FastAPI)
 │   ├── app/            # Application code
 │   ├── api/            # API routes
-│   ├── models/         # Trained models
-│   ├── data/           # Data files
+│   ├── models/         # Trained models (empty - add your models here)
+│   ├── data/           # Data files (empty - add your data here)
 │   └── scripts/        # Utility scripts
 │
 └── sp500-frontend/     # Frontend (React)
@@ -42,7 +42,8 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 # Install dependencies
 pip install -r requirements.txt
 
-# Start the API server
+# Place your training data in data/train.csv
+# Then start the API server
 python3 -m app.main
 ```
 
